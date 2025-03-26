@@ -1,14 +1,7 @@
-# Kodaloid's SlimPHP Skeleton
+# Slim4 Site With Login
 
-[SlimPHP](https://github.com/slimphp/Slim) is becoming more and more useful to me, so I've spent some time building
-this skeleton to improve my production speed. This is a bare bones SlimPHP app
-with ENV settings file loading, twig templates, logging & JWT auth.
-
-A lot of the skeleton you see here was inspired by another Git repo by *GoThinkster* 
-which can be found [here](https://github.com/gothinkster/slim-php-realworld-example-app/). 
-Their example was written for a much older version of SlimPHP so I put a lot of 
-work in to bring things up to date. This skeleton is designed for PHP 8.2+ and 
-for SlimPHP 4+.
+A remix of my [SlimPHP](https://github.com/slimphp/Slim) template demonstrating
+how to setup a website with a simple login system.
 
 ## How To Use
 
@@ -22,10 +15,13 @@ mkdir my-app
 cd my-app
 
 # clone this repo
-git clone https://github.com/kodaloid/slim4-skeleton .
+git clone https://github.com/kodaloid/slim4-site-with-login .
 
 # get composer to prepare dependencies
 composer install
+
+# also prepare the node dependencies
+npm install
 
 # setup the .env file (make sure to edit it!)
 cp .env.example .env
@@ -39,18 +35,23 @@ point the root at the `/public/` folder, you will need to rename the
 `.htaccess.example` file to `.htaccess` and modify the `RewriteBase` so that 
 things work correctly.
 
+## Compiling Assets
 
-## Example Routes
+This version of the project comes with SASS and TypeScript support. Files are
+stored in the `/assets` folder, and are built using NodeJS outputting to the
+public folder `/public/assets`. 
 
-A few test routes have been setup to demo how this works, they are setup in the
-file `/src/routes.php`. The first is the home route at `http://localhost:8080/`
-which should render a twig template.
+To compile assets, use this command:
 
-The second is visit `http://localhost:8080/hello/droid`. Which should output the
-text `Hello, droid`, demonstrating pass through arguments.
+```bash
+npm run dev
+```
 
-The third is a demo for JWT. 
+Or change it to this to enable auto-recompile.
 
-Use an API client, set the endpoint to `http://localhost:8080/api/test` and pass
-a JWT formatted token (encode using `JWT_SECRET` in the `.env` file) using the 
-Bearer method. This should output text similar to `Test Worked! Issuer is xxx`.
+```bash
+npm run dev-watch
+```
+
+You don't have to use these technologies, but they can be very useful and time
+saving.

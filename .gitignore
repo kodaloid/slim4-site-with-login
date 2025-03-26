@@ -25,3 +25,4 @@ Thumbs.db
 
 #others
 composer.lock
+package-lock.json
