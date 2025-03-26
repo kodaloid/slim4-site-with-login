@@ -1,0 +1,36 @@
+{
+    "name": "kodaloid/slim4-skeleton",
+    "description": "A bare bones skeleton for building websites with SlimPHP 4x.",
+    "license": "MIT",
+    "authors": [
+        {
+            "name": "Kodaloid",
+            "email": "jakiro.fire@gmail.com",
+            "homepage": "https://kodaloid.com",
+            "role": "Lead Developer"
+        }
+    ],
+    "require": {
+        "php": ">=8.2",
+        "slim/slim": "4.*",
+        "slim/psr7": "^1.7",
+        "slim/twig-view": "^3.4",
+        "monolog/monolog": "^3.8",
+        "vlucas/phpdotenv": "^5.6",
+        "php-di/php-di": "^7.0",
+        "tuupola/slim-jwt-auth": "^3.8",
+        "sergeytsalkov/meekrodb": "^3.1"
+    },
+    "autoload": {
+      "psr-4": {
+          "App\\": "src/App/"
+      }
+    },
+    "config": {
+        "process-timeout" : 0,
+        "php": "8.2"
+    },
+    "scripts": {
+        "start": "php -d variables_order=EGPCS -S localhost:8080 -t public public/index.php"
+    }
+}
